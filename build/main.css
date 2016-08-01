@@ -1,0 +1,33 @@
+.container {
+  position: relative;
+  overflow: hidden;
+}
+html,
+body,
+.container {
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.go {
+  position: absolute;
+  z-index: 2;
+  top: 14.61333333rem;
+  left: 1.29333333rem;
+  width: 7.38666667rem;
+}
+.down {
+  position: absolute;
+  top: 10.45333333rem;
+  left: 1.76rem;
+  width: 6.48rem;
+  z-index: 2;
+}

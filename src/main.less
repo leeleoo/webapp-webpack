@@ -1,0 +1,35 @@
+@font-tablet-base:75;
+.px2rem(@name,@px){
+  @{name}: @px / @font-tablet-base * 1rem ;
+}
+.container{
+	position:relative;
+	overflow: hidden;
+}
+html,body,.container{
+	height: 100%;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+.bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.go{
+	position:absolute;
+	z-index: 2;
+	.px2rem(top,1334-148-90);
+	.px2rem(left,97);
+	.px2rem(width,554);
+}
+.down{
+	position:absolute;
+	.px2rem(top,1334-412-138);
+	.px2rem(left,132);
+	.px2rem(width,486);
+	z-index: 2;
+}

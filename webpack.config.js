@@ -31,30 +31,34 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         loader: 'babel',
-        include: APP_PATH,
+        include: SRC_PATH,
         query: {
           presets: ['es2015']
         }
       },
       {
         test: /\.less$/,
-        loaders: ['style-loader','css!less'],
+        loader: "style!css!less",
         include: SRC_PATH
       },
       {
         test:/\.html$/,
         loader:'raw-loader',
       },
-      {test: /\.(png|jpg|svg)$/, loader: 'url-loader?limit=40000'}
+      {test: /\.(png|jpg|svg)$/, loader: 'url-loader?limit=40000'},
+      {
+          test: /\.(htm|html)$/i,
+          loader: 'html-withimg-loader'
+      },
     ]
   },
   plugins: [
-    // new HtmlwebpackPlugin({
-    //   title: 'Hello World app',
-    //   template: path.resolve(TEM_PATH, 'index.html'),
-    //   filename: 'index.html',
-    //   inject: 'body'
-    // }),
+    new HtmlwebpackPlugin({
+      title: '阿凡题啊阿凡题,阿是阿凡提的阿,题是阿凡题的题',
+      template: path.resolve(TEM_PATH, 'index.html'),
+      filename: 'index.html',
+      inject: 'body'
+    }),
     /*new HtmlwebpackPlugin({
       title: 'Hello Mobile app',
       template: path.resolve(TEM_PATH, 'mobile.html'),

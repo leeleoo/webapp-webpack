@@ -24,10 +24,14 @@ module.exports = {
   },
   output: {
     path: BUILD_PATH,
-    filename: '[name].[hash].js'
+    filename: '[name].js'
   },
   module: {
     loaders: [
+      {
+          test: /\.(htm|html)$/i,
+          loader: 'html-withimg-loader'
+      },
       {
         test: /\.(js|jsx)$/,
         loader: 'babel',
@@ -61,7 +65,7 @@ module.exports = {
    //new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
     //generate two pages
     new HtmlwebpackPlugin({
-      title: 'Hello World app',
+      title: '阿凡题啊阿凡题,阿是阿凡提的阿,题是阿凡题的题',
       template: path.resolve(TEM_PATH, 'index.html'),
       filename: 'index.html',
       chunks: ['app', 'vendors'],
